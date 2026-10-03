@@ -10,6 +10,7 @@
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* تصحيح محدد الشمول العام */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -45,10 +46,12 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 8px;
     background: var(--bg-card);
     backdrop-filter: blur(12px);
     width: fit-content;
+    max-width: 95%;
     margin: 1.5rem auto 0;
     padding: 6px;
     border-radius: 50px;
@@ -59,10 +62,10 @@ nav {
 nav a {
     color: var(--text-muted);
     text-decoration: none;
-    padding: 8px 20px;
+    padding: 8px 16px;
     border-radius: 30px;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     transition: var(--transition-smooth);
 }
 
@@ -83,11 +86,12 @@ main {
     text-align: center;
     padding: 3rem 1.5rem;
     max-width: 1100px;
+    width: 100%;
     margin: 0 auto;
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 800;
     margin-bottom: 1.25rem;
     background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%);
@@ -97,80 +101,39 @@ h1 {
 }
 
 p {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     color: var(--text-muted);
     max-width: 650px;
     margin-bottom: 2rem;
 }
 
-/* تنسيق الجدول العصري */
+/* تنسيق الجدول العصري بحدود واضحة ومتكاملة */
 .table-container {
     width: 100%;
     overflow-x: auto;
     margin-top: 1.5rem;
     border-radius: 16px;
-    border: 1px solid var(--border-color);
-    background: var(--bg-card);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: right;
-    white-space: nowrap;
-}
-
-th, td {
-    padding: 1rem 1.25rem;
-    font-size: 0.95rem;
-}
-
-th {
-    background: rgba(17, 24, 39, 0.9);
-    color: var(--text-main);
-    font-weight: 700;
-    border-bottom: 2px solid var(--border-color);
-    letter-spacing: 0.5px;
-}
-
-td {
-    color: var(--text-muted);
-    border-bottom: 1px solid var(--border-color);
-    transition: var(--transition-smooth);
-}
-
-tbody tr:last-child td {
-    border-bottom: none;
-}
-
-tbody tr:hover td {
-    background: rgba(59, 130, 246, 0.08);
-    color: var(--text-main);
-}
-
-/* التذييل المنظم */
-footer {
-    background: var(--bg-secondary);
-    text-align: center;
-    padding: 1.5rem;
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    border-top: 1px solid var(--border-color);
-}
-/* تنسيق الجدول العصري بحدود واضحة */
-.table-container {
-    width: 100%;
-    overflow-x: auto;
-    margin-top: 1.5rem;
-    border-radius: 16px;
-    border: 2px solid var(--accent-color); /* حدود خارجية واضحة باللون الأزرق */
+    border: 2px solid var(--accent-color);
     background: var(--bg-card);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* تخصيص شريط التمرير الأفقي للجدول ليتناسب مع التصميم */
+.table-container::-webkit-scrollbar {
+    height: 6px;
+}
+.table-container::-webkit-scrollbar-track {
+    background: rgba(11, 15, 25, 0.5);
+    border-radius: 0 0 16px 16px;
+}
+.table-container::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+}
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
 }
 
 table {
@@ -183,7 +146,7 @@ table {
 th, td {
     padding: 1.1rem 1.25rem;
     font-size: 0.95rem;
-    border: 1px solid var(--border-color); /* حدود واضحة لكل خلايا الجدول */
+    border: 1px solid var(--border-color);
 }
 
 th {
@@ -191,6 +154,7 @@ th {
     color: var(--text-main);
     font-weight: 700;
     border-bottom: 2px solid var(--accent-color);
+    letter-spacing: 0.5px;
 }
 
 td {
@@ -201,4 +165,29 @@ td {
 tbody tr:hover td {
     background: rgba(59, 130, 246, 0.12);
     color: var(--text-main);
+}
+
+/* التذييل المنظم */
+footer {
+    background: var(--bg-secondary);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-color);
+}
+
+/* الاستجابة للشاشات الصغيرة جداً */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    nav {
+        border-radius: 20px;
+        padding: 4px;
+    }
+    nav a {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
 }
