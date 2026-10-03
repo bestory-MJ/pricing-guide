@@ -191,3 +191,44 @@ footer {
         font-size: 0.85rem;
     }
 }
+/* تنسيق قسم النقاط الرئيسية لضمان التميز البصري */
+.support-points {
+    width: 100%;
+    max-width: 800px;
+    text-align: right;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.point-item {
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
+    transition: var(--transition-smooth);
+}
+
+.point-item:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.point-item h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #60a5fa; /* لون مميز متناسق مع التدرجات الزرقاء */
+    margin-bottom: 0.75rem;
+}
+
+.point-item p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 0;
+    max-width: 100%;
+    line-height: 1.8;
+}
