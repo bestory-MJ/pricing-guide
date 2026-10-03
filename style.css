@@ -160,3 +160,45 @@ footer {
     color: var(--text-muted);
     border-top: 1px solid var(--border-color);
 }
+/* تنسيق الجدول العصري بحدود واضحة */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 1.5rem;
+    border-radius: 16px;
+    border: 2px solid var(--accent-color); /* حدود خارجية واضحة باللون الأزرق */
+    background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 0 20px var(--accent-glow);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: right;
+    white-space: nowrap;
+}
+
+th, td {
+    padding: 1.1rem 1.25rem;
+    font-size: 0.95rem;
+    border: 1px solid var(--border-color); /* حدود واضحة لكل خلايا الجدول */
+}
+
+th {
+    background: rgba(17, 24, 39, 0.95);
+    color: var(--text-main);
+    font-weight: 700;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+td {
+    color: var(--text-muted);
+    transition: var(--transition-smooth);
+}
+
+tbody tr:hover td {
+    background: rgba(59, 130, 246, 0.12);
+    color: var(--text-main);
+}
